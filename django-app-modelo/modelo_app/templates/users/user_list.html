@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+    {% load static %}
+    {% block styles %}
+    <link rel="stylesheet" href="{% static 'css/users.css' %}">
+    {% endblock %}
+
+    {% block content %}
+
+    <h1>Users</h1>  
+    <h1>Lista de clientes</h1>
+    <div class="container">
+
+        {% for item in users %}
+            {% include 'components/UserCard.html' with name=item.name email=item.email id=item.id %}
+    
+        {% endfor %}
+    </div>
+    {% endblock %}

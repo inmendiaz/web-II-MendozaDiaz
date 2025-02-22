@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/edit_user.css' %}">
+</head>
+<body>
+    {% include 'base/header.html' %}
+
+    <h2>Editar Usuario</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Name:</label>
+        <input type="text" id="name" name="name" value="{{ usuario.name }}"><br>
+        
+        <label>Email:</label>
+        <input type="email" id="email" name="email" value="{{ usuario.email }}"><br>
+
+        <label>Age:</label>
+        <input type="number" id="age" name="age" value="{{ usuario.age }}"><br>
+
+        <label>RFC:</label>
+        <input type="text" id="rfc" name="rfc" value="{{ usuario.rfc }}"><br>
+
+        <label>Photo</label>
+        <input type="text" id="photo" name="photo" value="{{ usuario.photo }}"><br>
+        
+        <br>
+
+        <button type="submit">Actualizar</button>
+    </form>
+
+    {% include 'base/footer.html' %}
+
+</body>
+</html>

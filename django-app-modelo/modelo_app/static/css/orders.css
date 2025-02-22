@@ -1,3 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
 h1 {
     text-align: center;
     color: blue;
@@ -20,3 +28,4 @@ p {
     font-size: 20px;
     border: 1px solid black;
 }
+

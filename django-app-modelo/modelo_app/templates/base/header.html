@@ -1,0 +1,8 @@
+{% load static %}
+<header>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <nav>
+        <a href="{% url 'indexUsers' %}">Users</a>
+        <a href="{% url 'indexOrders' %}">Orders</a>
+    </nav>
+</header>

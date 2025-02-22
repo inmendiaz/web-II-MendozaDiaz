@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/users.css' %}">
 </head>
 <body>
+    {% include 'base/header.html' %}
     <h1>{{Titulo}}</h1>
 
     <div class="container">
@@ -21,8 +22,13 @@
                     <p class="align"> <strong>ID:</strong>  {{usuario.id}}</p>
                     <p class="align"> <strong>Age:</strong>  {{usuario.age}}</p>
                 </div>
+                <a href="{% url 'editar_usuario' usuario.id %}">Ver</a>
             </div>
         {% endfor %}
+            <a href="{% url 'createUser' %}">Crear</a>
+       
+        
     </div>
+    
 </body> 
 </html>

@@ -1,0 +1,10 @@
+footer {
+    background-color: rgb(170, 90, 227); /* Fondo oscuro */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrado del texto */
+    padding: 15px 0; /* Espaciado arriba y abajo */
+    font-size: 16px;
+    position: fixed; /* Fijado en la parte inferior */
+    bottom: 0;
+    width: 100%;
+}

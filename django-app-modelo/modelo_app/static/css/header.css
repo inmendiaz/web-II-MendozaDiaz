@@ -1,0 +1,29 @@
+
+header {
+    background-color: rgb(170, 90, 227);  
+    padding: 15px 0;
+    text-align: center;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+
+nav a:hover {
+    background: #873c87;
+}
