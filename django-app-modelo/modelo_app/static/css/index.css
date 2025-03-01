@@ -1,0 +1,94 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Menú de navegación */
+nav {
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: purple;
+    font-weight: bold;
+}
+
+/* Sección de imágenes destacadas */
+.imagenes-destacadas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.imagenes-destacadas img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Noticias */
+.noticias-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.noticia {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    background: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.noticia img {
+    width: 40%;
+    object-fit: cover;
+}
+
+.eventos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.evento-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: left;
+}
+.evento-card p {
+    margin: 5px 0;
+}
+
+.btn-boleto {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 40%; /* Puedes ajustar el ancho según necesites */
+    display: block;
+    margin: 10px auto; /* Centra horizontalmente */
+    text-align: center;
+}
