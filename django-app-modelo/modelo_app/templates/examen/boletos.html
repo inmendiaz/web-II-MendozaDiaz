@@ -13,6 +13,7 @@
     <div class="boletos-container">
         {% for boleto in Boletos %}
         <div class="boleto-card">
+            <img src="{% static 'img/boleto.png' %}" alt="Boleto" class="boleto-img">
             <p><strong>Boleto </strong> {{ boleto.tipo_boleto_id }}</p>
             <p><strong>Localidad: </strong> {{ boleto.evento.localidad }}</p>
             <p><strong>Precio: </strong> $ {{ boleto.precio }}</p>
