@@ -1,29 +1,25 @@
-/* Estilo general del header */
 header {
     background-color: #333;
     padding: 10px 20px;
     color: white;
 }
 
-/* Usamos Flexbox para el nav */
 nav {
     display: flex;
-    justify-content: space-between; /* Separa los elementos en los dos lados */
+    justify-content: space-between; 
     align-items: center;
 }
 
-/* Alinea los enlaces a la izquierda */
 nav .left {
-    flex: 1; /* Ocupa todo el espacio disponible a la izquierda */
+    flex: 1; 
+    text-align: start;
 }
 
-/* Alinea los enlaces a la derecha */
 nav .right {
-    display: flex; /* Alinea los enlaces horizontalmente */
-    gap: 20px; /* Espacio entre los enlaces */
+    display: flex; 
+    gap: 20px; 
 }
 
-/* Estilo para los enlaces */
 nav a {
     color: white;
     text-decoration: none;
@@ -31,6 +27,6 @@ nav a {
 }
 
 nav a:hover {
-    background-color: #555; /* Cambia el color de fondo cuando el enlace es hover */
-    border-radius: 4px; /* Añade bordes redondeados */
+    background-color: #555; 
+    border-radius: 4px; 
 }

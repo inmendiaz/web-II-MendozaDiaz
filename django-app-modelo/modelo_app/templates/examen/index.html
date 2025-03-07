@@ -9,20 +9,21 @@
 </head>
 <body>
     {% include 'base/header.html' %}
-
-    <!-- Sección de imágenes destacadas -->
     <div class="imagenes-destacadas">
-        <img src="{% static 'img/carnaval1.png' %}" alt="Carnaval 1">
-        <img src="{% static 'img/carnaval2.png' %}" alt="Carnaval 2">
-        <img src="{% static 'img/carnaval3.png' %}" alt="Carnaval 3">
-        <img src="{% static 'img/carnaval4.png' %}" alt="Carnaval 4">
-        <img src="{% static 'img/carnaval5.png' %}" alt="Carnaval 4">
+        <img class="img-top" src="{% static 'img/carnaval1.png' %}" alt="Carnaval 1">
+        <img class="img-top" src="{% static 'img/carnaval2.png' %}" alt="Carnaval 2">
     </div>
+    <div class="imagenes-destacadas">
+        <img class="img-bottom" src="{% static 'img/carnaval3.png' %}" alt="Carnaval 3">
+        <img class="img-bottom" src="{% static 'img/carnaval4.png' %}" alt="Carnaval 4">
+        <img class="img-bottom-2" src="{% static 'img/carnaval5.png' %}" alt="Carnaval 4">
+    </div>
+
+    
 
     <div class="container">
         <h2>NOTICIAS</h2>
         <div class="sections-container">
-            <!-- Sección de Noticias -->
             <div class="noticias-container">
                 <div class="noticia">
                     <img src="{% static 'img/noticia.png' %}" alt="Noticia">
@@ -40,7 +41,6 @@
                 </div>
             </div>
     
-            <!-- Sección de Eventos -->
             <div class="eventos-container">
                 <div class="evento-card">
                     <img src="{% static 'img/evento.png' %}" alt="Evento">

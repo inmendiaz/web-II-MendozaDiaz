@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Evento</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/agregar_evento.css' %}">
+</head>
+<body>
+    {% include 'base/header.html' %}
+    
+    <div class="container">
+        <div class="form-section">
+            <h2>Agregar evento</h2>
+
+            <div class="form-container">
+                <input type="text" id="nombreEvento" placeholder="Nombre del evento">
+                <input type="datetime-local" id="fechaInicio" placeholder="Fecha inicio">
+                <input type="datetime-local" id="fechaFin" placeholder="Fecha final">
+                <select id="localidadId">
+                    <option value="" disabled selected>Selecciona una localidad</option>
+                    {% for localidad in localidades %}
+                        <option value="{{ localidad.id }}">{{ localidad.name }}</option>
+                    {% endfor %}
+                </select>
+                <button onclick="agregarEvento()">Agregar</button>
+            </div>
+        </div>
+
+        <div class="rules">
+            <h3>Reglas</h3>
+            <ul>
+                <li>Ningún campo debe quedar vacío</li>
+                <li>La fecha fin no puede ser menor que la fecha inicio</li>
+                <li>La fecha de inicio debe ser mayor o igual al día de hoy</li>
+                <li>No puedes agregar dos eventos seguidos de la misma localidad sin intervalo</li>
+                <li>Mostrar mensaje de guardado o error en caso de fallar</li>
+                <li>El envío de información debe ser por medio del método FETCH de JS</li>
+                <li>El botón "Eliminar" deberá hacerse por medio del método FETCH de JS</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Eventos recientemente agregados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Fecha inicio</th>
+                <th>Fecha fin</th>
+                <th>Localidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="eventosTable">
+            {% if eventos %}
+                {% for evento in eventos %}
+                <tr id="evento-{{ evento.id }}">
+                    <td>{{ evento.name }}</td>
+                    <td>{{ evento.fecha_inicio }}</td>
+                    <td>{{ evento.fecha_fin }}</td>
+                    <td>{{ evento.localidad.name }}</td>
+                    <td>
+                        <button onclick="eliminarEvento('{{ evento.id }}')">Eliminar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="5" style="text-align: center;">No hay eventos agregados aún.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+
+    <script src="{% static 'js/eventos.js' %}"></script>
+</body>
+</html>

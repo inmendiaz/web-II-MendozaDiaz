@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
     padding: 0;
+    margin: 20px;
     background-color: #f8f8f8;
 }
 
@@ -72,20 +72,19 @@ button:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    text-align: center;
 }
 
+thead {
+    background-color: #292727;
+    color: white;
+}
 
 th, td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: center;
     vertical-align: middle;
-}
-
-th {
-    background-color: #292727;
-    color: white;
 }
 
 td button {
@@ -95,7 +94,7 @@ td button {
     color: white;
     cursor: pointer;
     text-align: center;
-    width: 25%;
+    width: 50%;
     font-size: 14px;
 }
 

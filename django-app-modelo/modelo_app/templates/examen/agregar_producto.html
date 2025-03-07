@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/agregar_producto.css' %}">
 </head>
 <body>
+    {% include 'base/header.html' %}
     <div class="container">
         <div class="form-section">
             <h2>Agregar producto</h2>
@@ -15,9 +16,11 @@
             <div class="form-container">
                 <input type="text" id="nombreProducto" placeholder="Nombre del producto">
                 <input type="number" id="precioProducto" placeholder="Precio">
-                <select id="localidadId">
-                    <option value="1">Barranquilla</option>
-                    <option value="2">Bogotá</option>
+                <select id="localidadId" placeholder="localidad">
+                    <option value="" disabled selected>Selecciona una localidad</option>
+                    {% for localidad in localidades %}
+                        <option value="{{ localidad.id }}">{{ localidad.name }}</option>
+                    {% endfor %}
                 </select>
                 <button onclick="agregarProducto()">Agregar</button>
             </div>
@@ -64,5 +67,6 @@
             {% endif %}
         </tbody>
     </table>
+    <script src="{% static 'js/productos.js' %}"></script>
 </body>
 </html>

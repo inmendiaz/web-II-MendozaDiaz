@@ -8,14 +8,6 @@ class Localidad(models.Model):
     def __str__(self):
         return self.name
 
-class Producto(models.Model):
-    name = models.CharField(max_length=200)
-    precio = models.FloatField()
-    localidad = models.ForeignKey(Localidad, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.name
-
 class Evento(models.Model):
     name = models.CharField(max_length=300, null=False)
     fecha_inicio = models.DateTimeField(null=False)
@@ -38,7 +30,7 @@ class Producto(models.Model):
     name = models.CharField(max_length=200, null=False) 
     precio = models.FloatField(null=False)  
     localidad = models.ForeignKey(Localidad, on_delete=models.CASCADE, null=False)
-    fecha_creacion = models.DateTimeField(default=now)  # Añadí un related_name para poder acceder a los productos desde una localidad
+    fecha_creacion = models.DateTimeField(default=now) 
 
             
     def __str__(self):
