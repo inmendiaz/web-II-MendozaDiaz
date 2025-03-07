@@ -2,8 +2,13 @@
 <header>
     <link rel="stylesheet" href="{% static 'css/header.css' %}">
     <nav>
-        <a href="{% url 'index' %}">Home</a>
-        <a href="{% url 'Eventos' %}">Eventos</a>
-        <a href="{% url 'Boletos' %}">Boletos</a>
+        <div class="left">
+            <a href="{% url 'index' %}">Index</a>
+        </div>
+        <div class="right">
+            <a href="{% url 'Eventos' %}">Eventos</a>
+            <a href="{% url 'Boletos' %}">Boletos</a>
+            <a href="{% url 'productos' %}">Productos</a>
+        </div>
     </nav>
 </header>

@@ -19,39 +19,49 @@
         <img src="{% static 'img/carnaval5.png' %}" alt="Carnaval 4">
     </div>
 
-    <!-- Sección de Noticias -->
-    <h2>NOTICIAS</h2>
-    <div class="noticias-container">
-        <div class="noticia">
-            <img src="{% static 'img/noticia.png' %}" alt="Noticia">
-            <div class="noticia-texto">
-                <h3>Noticia</h3>
-                <p>El evento de Los Angeles es una de las festividades más importantes y uno de los eventos más grandes del mundo...</p>
+    <div class="container">
+        <h2>NOTICIAS</h2>
+        <div class="sections-container">
+            <!-- Sección de Noticias -->
+            <div class="noticias-container">
+                <div class="noticia">
+                    <img src="{% static 'img/noticia.png' %}" alt="Noticia">
+                    <div class="noticia-texto">
+                        <h3>Noticia</h3>
+                        <p>El evento de Los Angeles es una de las festividades más importantes y uno de los eventos más grandes del mundo...</p>
+                    </div>
+                </div>
+                <div class="noticia">
+                    <img src="{% static 'img/noticia.png' %}" alt="Noticia">
+                    <div class="noticia-texto">
+                        <h3>Noticia</h3>
+                        <p>El evento de Estados Unidos es una de las festividades más importantes y uno de los eventos más grandes del mundo...</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="noticia">
-            <img src="{% static 'img/noticia.png' %}" alt="Noticia">
-            <div class="noticia-texto">
-                <h3>Noticia</h3>
-                <p>El evento de Estados Unidos es una de las festividades más importantes y uno de los eventos más grandes del mundo...</p>
+    
+            <!-- Sección de Eventos -->
+            <div class="eventos-container">
+                <div class="evento-card">
+                    <img src="{% static 'img/evento.png' %}" alt="Evento">
+                    <div class="evento-info">
+                        <h3>Evento #1</h3>
+                        <p><strong>Localidad:</strong> Ciudad 1</p>
+                        <p><strong>Descripción:</strong> Descripción del evento 1...</p>
+                    </div>
+                </div>
+                <div class="evento-card">
+                    <img src="{% static 'img/evento.png' %}" alt="Evento">
+                    <div class="evento-info">
+                        <h3>Evento #2</h3>
+                        <p><strong>Localidad:</strong> Ciudad 2</p>
+                        <p><strong>Descripción:</strong> Descripción del evento 2...</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <!-- Sección de Eventos -->
-    <h2>Eventos</h2>
-    <div class="eventos-container">
-        {% for evento in eventos %}
-        <div class="evento-card">
-            <img src="{% static 'img/evento.png' %}" alt="Evento">
-            <div class="evento-info">
-                <h3>Evento #{{ evento.id }}</h3>
-                <p><strong>Localidad:</strong> {{ evento.localidad.name }}</p>
-                <p><strong>Descripción:</strong> {{ evento.descripcion }}</p>
-                <a href="{% url 'Boletos' %}" class="btn-boleto">Boletos</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    
+    
 </body>
 </html>

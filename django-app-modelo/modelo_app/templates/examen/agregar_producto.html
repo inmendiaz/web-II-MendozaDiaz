@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/agregar_producto.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Agregar producto</h2>
+
+            <div class="form-container">
+                <input type="text" id="nombreProducto" placeholder="Nombre del producto">
+                <input type="number" id="precioProducto" placeholder="Precio">
+                <select id="localidadId">
+                    <option value="1">Barranquilla</option>
+                    <option value="2">Bogotá</option>
+                </select>
+                <button onclick="agregarProducto()">Agregar</button>
+            </div>
+        </div>
+
+        <div class="rules">
+            <h3>Reglas</h3>
+            <ul>
+                <li>Ningún campo debe quedar vacío</li>
+                <li>El precio del producto debe ser mayor a 0</li>
+                <li>Solo se pueden agregar 10 productos por día</li>
+                <li>El envío de información debe ser por medio del método FETCH de JS</li>
+                <li>El botón "Eliminar" deberá de hacerse por medio del método FETCH de JS</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>Productos recientemente agregados</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Localidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="productosTable">
+            {% if productos %}
+                {% for producto in productos %}
+                <tr id="producto-{{ producto.id }}">
+                    <td>{{ producto.name }}</td>
+                    <td>{{ producto.precio }}</td>
+                    <td>{{ producto.localidad.name }}</td>
+                    <td>
+                        <button onclick="eliminarProducto('{{ producto.id }}')">Eliminar</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="4" style="text-align: center;">No hay productos agregados aún.</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</body>
+</html>

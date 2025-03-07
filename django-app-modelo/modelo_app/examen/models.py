@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.timezone import now
 
 class Localidad(models.Model):
     name = models.CharField(max_length=100, null=False)
@@ -32,3 +33,13 @@ class Boleto(models.Model):
 
     def __str__(self):
         return f"Boleto para {self.evento.name} - {self.fecha}"
+
+class Producto(models.Model):
+    name = models.CharField(max_length=200, null=False) 
+    precio = models.FloatField(null=False)  
+    localidad = models.ForeignKey(Localidad, on_delete=models.CASCADE, null=False)
+    fecha_creacion = models.DateTimeField(default=now)  # Añadí un related_name para poder acceder a los productos desde una localidad
+
+            
+    def __str__(self):
+        return self.name
