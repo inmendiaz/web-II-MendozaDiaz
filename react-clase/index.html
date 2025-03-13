@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Agregar el script de Babel -->
+    <script src="https://unpkg.com/@babel/standalone"></script>
+    <script type="text/babel" src="./components/MyButton.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="root">
+    </div>
+</body>
+
+<script type="text/babel">
+
+    function saludar(params) {
+        alert('Hola Mundo');
+    }
+
+    function despertar(params) {
+        alert('Adios Mundo')
+    }
+
+    
+    function App() {
+        const { useState } = React;
+        const [contador, setContador] = useState(0);
+        const [contador2, setContador2] = useState(0);
+        const [visible, setVisible] = useState(true);
+        //const [alumnos, setAlUMNOS] = useState(["Eduardo", "Juan", "Pedro", "Maria", "Ana"]);
+        const [alumnoCalificacion, setAlumnoCalificacion] = useState([
+            { nombre: "Diego", calificacion: 9, materia: "SO" },
+            { nombre: "Ingrid", calificacion: 10, materia: "Diseño" },
+            { nombre: "Rafael", calificacion: 8, materia: "Base de Datos" },
+            { nombre: "Eduardo", calificacion: 9, materia: "Proyección y Modelado" },
+            { nombre: "Pablo", calificacion: 7, materia: "Administración de procesos de negocios" },
+            { nombre: "Victor", calificacion: 9, materia: "Cómputo en la nube" },
+            { nombre: "Fernando", calificacion: 10, materia: "Programación" },
+            { nombre: "Chan", calificacion: 8, materia: "Modelado 3D" },
+            { nombre: "Renzo", calificacion: 9, materia: "Probabilidad" },
+            { nombre: "Bety", calificacion: 10, materia: "Matemáticas" },
+        ]);
+
+       const [visibleAlumnos, setVisibleAlumnos] = useState(
+            Array(alumnoCalificacion.length).fill(true)
+        );
+
+        function Ocultar_alumno(index) {
+            const nuevosVisibles = [...visibleAlumnos];
+            nuevosVisibles[index] = false;
+            setVisibleAlumnos(nuevosVisibles);
+        }
+
+        function Ver_alumno() {
+            setVisible(!visible);
+        }
+
+        function Restaurar_alumno() {
+            setVisibleAlumnos(Array(alumnoCalificacion.length).fill(true));
+        }  
+
+        return (
+            <div>
+                <h1>Hola Mundo</h1>
+                <p>Esto es React</p>
+
+                <button onClick={() => alert("Hola Mundo")}>Click</button>
+                
+                <h2>Contador - 1:  {contador}</h2>
+                <MyButton titulo="Contador 1" contador={contador} setContador={setContador}/>
+                
+                <h2>Contador - 2:  {contador2}</h2>
+                <MyButton titulo="Contador 2"contador={contador2} setContador={setContador2} />
+                <br/>
+                <br/>
+                <button id="ver-btn" onClick={Ver_alumno}>Ver / Ocultar lista</button>
+                
+
+                <div className="container">
+                    {alumnoCalificacion.map((alumno, index) => (
+                        visibleAlumnos[index] && (
+                            <div key={index} className="card" style={{ display: visible ? 'block' : 'none' }}> 
+                                <p>Alumno: {alumno.nombre}</p> 
+                                <p>Calificación: {alumno.calificacion}</p>
+
+                                <p>Materia: {alumno.materia}</p>
+
+                                <button onClick={() => Ocultar_alumno(index)}>Ocultar</button>
+                            </div>
+                        )
+                    ))}
+                </div>
+            
+                <button id="restaurar-btn" onClick={Restaurar_alumno}>Restaurar Alumnos</button>
+                
+            </div>
+        );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+
+</script>
+
+</html>
