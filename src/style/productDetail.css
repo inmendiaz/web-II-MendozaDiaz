@@ -1,0 +1,38 @@
+.product-detail {
+    background-color: transparent;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-detail img {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .product-detail-content {
+    color: white;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .product-detail-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .product-detail-content p {
+    margin-bottom: 8px;
+  }
+  
+  .product-detail-content button {
+    background: none;
+    border: none;
+    color: #a78bfa;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
